@@ -65,6 +65,7 @@ app.post("/order",(req,res)=>{
         request(options, function (error, response) {
         if (error) throw new Error(error);
         console.log(response);
+        res.redirect('/orders');
         });
     
 })
@@ -82,6 +83,7 @@ app.post("/dish",(req,res)=>{
         request(options, function (error, response) {
         if (error) throw new Error(error);
         console.log(response);
+        res.redirect('/dishes');
         });
     
 })
