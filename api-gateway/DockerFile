@@ -1,0 +1,11 @@
+FROM node:stretch-slim
+
+WORKDIR /exam-api-gateway
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm","start"]
