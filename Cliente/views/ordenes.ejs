@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <th style="width: 7.5%;"></th>
+        <th style="width: 80%;"></th>
+        <th style="width: 12.5%;"></th>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<orders.length; i++) {%>
+            <tr>
+                <td><%=i+1%></td>
+                <td><%=orders[i].name%></td>
+                <td><%=orders[i].price%></td>
+                <td><%=orders[i].state%></td>
+            </tr>
+        <% };%>
+    </tbody>
+</table>
+
+<h1>Agregar Orden</h1>
+<form method="POST" action="/order">
+    <label>Plato: </label>
+    <select name="dishId">
+        <%for(var i=0;i<dishes.length;i++){%>
+            <option value='<%=dishes[i]["_id"]%>'><%=dishes[i].name%></option>
+        <%}%>
+    </select>
+    <input type="text" name="name">
+    <label>Precio : </label>
+    <input type="number" name="price"> 
+    <input type="submit" value="Agregar">
+</form>
