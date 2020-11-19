@@ -1,9 +1,8 @@
 const express = require("express");
-const kafkaClient = require("kafka-client");
-const kafka = require("kafka-client");
+const kafka = require("kafka-node");
 const app = express();
 const port = 3000;
-const request = require('request');
+var request = require('request');
 const client = new kafka.KafkaClient({kafkaHost: "kafka:9092"});
 const producer = new kafka.Producer(client);
 const api_gateway = "http://localhost:8080";
@@ -20,11 +19,7 @@ app.get("/orders",(req,res)=>{
    
     var options = {
         'method': 'GET',
-        'url': api_gateway+'/Orders',
-        'form': {
-            'idCourse': req.body.idCourse,
-            'idStudent': req.body.idStudent
-        }
+        'url': api_gateway+'/Orders'
         };
     
         request(options, function (error, response) {

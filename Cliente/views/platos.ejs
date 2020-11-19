@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <th style="width: 7.5%;"></th>
+        <th style="width: 80%;"></th>
+        <th style="width: 12.5%;"></th>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<dishes.length; i++) {%>
+            <tr>
+                <td><%=i+1%></td>
+                <td><%=dishes[i].name%></td>
+                <td><%=dishes[i].price%></td>
+                <td><%=dishes[i].state%></td>
+            </tr>
+        <% });%>
+    </tbody>
+</table>
