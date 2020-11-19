@@ -59,6 +59,10 @@ services:
         depends_on: 
             -kafka
             -mongo
+    exam-api-gateway:
+        image: exam-api-gateway
+        ports: 
+            - "8080:8080"
 
 
         
